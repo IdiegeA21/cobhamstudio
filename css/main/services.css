@@ -1,0 +1,266 @@
+/* Global Styles */
+/* :root {
+    --primary: #f9ba1f;
+    --secondary: #f9ba1f;
+    --light: #f8f7f5;
+    --dark: #222220;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+} */
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 60px;
+    background-color: var(--secondary);
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Services Hero */
+.services-hero {
+    padding: 120px 0 80px;
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.services-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('/api/placeholder/1200/500') center/cover no-repeat;
+    z-index: 0;
+}
+
+.services-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.services-hero h1 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.services-hero-p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    color: white;
+}
+
+/* Services Section */
+.services-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.services-section:nth-child(even) {
+    background-color: var(--white);
+}
+
+.services-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.services-intro h2 {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.services-intro h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.services-section:nth-child(even) .service-card {
+    background-color: var(--light);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.service-card:hover img {
+    transform: scale(1.05);
+}
+
+.service-content {
+    padding: 25px;
+}
+
+.service-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.service-card:hover h3 {
+    color: var(--secondary);
+}
+
+.service-content p {
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #666;
+}
+
+/* CTA Button */
+.cta-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #f9ba1f;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: var(--transition);
+    border: 2px solid var(--secondary);
+}
+
+.cta-btn:hover {
+    background-color: transparent;
+    color: var(--secondary);
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .services-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .services-section {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-hero {
+        padding: 80px 0 40px;
+    }
+    
+    .services-section {
+        padding: 60px 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+}
